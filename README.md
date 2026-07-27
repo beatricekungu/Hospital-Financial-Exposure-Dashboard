@@ -75,14 +75,11 @@ The result is an interactive report that combines data preparation, dimensional 
 
 The model uses encounter activity as the analytical hub, with one-to-many relationships from descriptive dimensions and a one-to-many relationship from encounters to procedures.
 
-```mermaid
-erDiagram
-    PATIENTS ||--o{ ENCOUNTERS : "has"
-    PAYERS ||--o{ ENCOUNTERS : "covers"
-    ORGANIZATIONS ||--o{ ENCOUNTERS : "provides"
-    DIM_DATE ||--o{ ENCOUNTERS : "filters"
-    ENCOUNTERS ||--o{ PROCEDURES : "includes"
-```
+<a href="assets/hospital-analytics-data-model.png">
+  <img src="assets/hospital-analytics-data-model.png" alt="Hospital Analytics Power BI semantic model with encounters, patients, procedures, payers, organizations, date, and subject-oriented measure tables" width="100%">
+</a>
+
+<p align="center"><em>Power BI semantic model — fact and dimension relationships with three subject-oriented measure tables</em></p>
 
 DAX logic is organized into three intentionally disconnected measure tables:
 
