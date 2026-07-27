@@ -1,102 +1,195 @@
-# 🏥 Hospital Financial Exposure Dashboard
+<h1 align="center">🏥 Hospital Financial Exposure Dashboard</h1>
 
-Published Power BI executive dashboard for the **Maven Hospital Challenge**, focused on admissions, readmissions, length of stay, visit cost, and insurance coverage.
+<p align="center">
+A three-page Power BI executive report that turns synthetic hospital records into decisions about utilization, patient demand, cost, payer contribution, and uncovered financial exposure.
+</p>
 
-[![Power BI](https://img.shields.io/badge/Power%20BI-Executive%20Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=111827)](https://app.powerbi.com/view?r=eyJrIjoiYTZmOTc5ZDQtMjQ2NS00ZTA4LTk4MTEtY2M3MThlMTI1N2NiIiwidCI6IjY3NzQ1OGU2LThjNTItNDYxMy05ZmRiLTJjYzgzN2Q1ZTRlZiJ9)
-![DAX](https://img.shields.io/badge/DAX-KPI%20Measures-1D9BBE?style=for-the-badge)
-![Power Query](https://img.shields.io/badge/Power%20Query-Data%20Preparation-0F766E?style=for-the-badge)
-![Healthcare Analytics](https://img.shields.io/badge/Healthcare-Analytics-7C3AED?style=for-the-badge)
+<p align="center">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiYTZmOTc5ZDQtMjQ2NS00ZTA4LTk4MTEtY2M3MThlMTI1N2NiIiwidCI6IjY3NzQ1OGU2LThjNTItNDYxMy05ZmRiLTJjYzgzN2Q1ZTRlZiJ9">
+    <img src="https://img.shields.io/badge/Power%20BI-View%20Live%20Report-F2C811?style=for-the-badge&logo=powerbi&logoColor=111827" alt="View live Power BI report">
+  </a>
+  <img src="https://img.shields.io/badge/DAX-KPI%20Measures-167A99?style=for-the-badge" alt="DAX">
+  <img src="https://img.shields.io/badge/Power%20Query-Data%20Preparation-0F9D9A?style=for-the-badge" alt="Power Query">
+  <img src="https://img.shields.io/badge/Data%20Model-Star%20Schema-7467D8?style=for-the-badge" alt="Data model">
+  <img src="https://img.shields.io/badge/Healthcare-Analytics-E7A531?style=for-the-badge" alt="Healthcare analytics">
+</p>
 
-## 🔗 Live Project
+<p align="center">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiYTZmOTc5ZDQtMjQ2NS00ZTA4LTk4MTEtY2M3MThlMTI1N2NiIiwidCI6IjY3NzQ1OGU2LThjNTItNDYxMy05ZmRiLTJjYzgzN2Q1ZTRlZiJ9"><strong>📊 Open the interactive dashboard</strong></a>
+  &nbsp;•&nbsp;
+  <a href="https://mavenanalytics.io/challenges/maven-hospital-challenge"><strong>🎯 View the Maven challenge</strong></a>
+</p>
 
-| Resource | Link |
-| --- | --- |
-| 📊 Published Power BI Dashboard | [View Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYTZmOTc5ZDQtMjQ2NS00ZTA4LTk4MTEtY2M3MThlMTI1N2NiIiwidCI6IjY3NzQ1OGU2LThjNTItNDYxMy05ZmRiLTJjYzgzN2Q1ZTRlZiJ9) |
-| 🌐 Portfolio Case Study | [View Portfolio Page](https://beatricekungu.github.io/cyberattack-financial-exposure.html) |
+---
+
+<a href="assets/mgh-overview-preview-v3.png">
+  <img src="assets/mgh-overview-preview-v3.png" alt="Massachusetts General Hospital executive Power BI dashboard overview" width="100%">
+</a>
+
+<p align="center"><em>Executive Overview — verified full-dataset KPIs for January 2011 through February 2022</em></p>
 
 ## 📌 Project Overview
 
-For the Maven Hospital Challenge, I acted as an **Analytics Consultant for Massachusetts General Hospital (MGH)**. The goal was to build a high-level KPI report that gives executives visibility into recent hospital performance using patient record data.
+For the **Maven Hospital Challenge**, I worked in the role of an analytics consultant supporting the executive team at Massachusetts General Hospital. The objective was to build a scalable, high-level KPI report from a subset of synthetic patient records.
 
-This project turns hospital data into an executive-ready Power BI dashboard by combining:
+I designed the solution around three stakeholder perspectives:
 
-- 🧹 Power Query data preparation
-- 🧠 DAX KPI measures
-- 🗄️ Structured data modeling
-- 📈 Executive dashboard design
-- 🏥 Healthcare operations analytics
-- 💰 Financial exposure and insurance coverage framing
+1. **Executive Overview** — activity, procedures, inpatient length of stay, cost, and coverage.
+2. **Patient Insights** — patient volume, repeat utilization, demographics, encounter mix, and geography.
+3. **Financial & Coverage** — claim cost, payer contribution, uncovered exposure, and procedure coverage.
 
-## 🎯 Executive Questions Answered
+The result is an interactive report that combines data preparation, dimensional modeling, governed DAX measures, UX design, bookmarks, navigation, and executive storytelling.
 
-| Executive Question | Dashboard Answer |
+## 📊 Verified Executive Scorecard
+
+| Metric | Full-dataset result | Why it matters |
+| --- | ---: | --- |
+| 🏥 **Total encounters** | **27,891** | Measures the total volume of hospital service records. |
+| 📋 **Total procedures** | **47,701** | Shows the volume of clinical procedures recorded. |
+| 👥 **Distinct patients** | **974** | Separates people served from the number of visits they generated. |
+| 🔁 **Procedures per encounter** | **1.71** | Adds operational context to procedure volume. |
+| ⏱️ **Average inpatient length of stay** | **36.84 hours / 1.54 days** | Measures stay duration only for valid inpatient encounters. |
+| 💵 **Average cost per visit** | **$3,640** | Provides an encounter-level view of billed cost. |
+| 🧾 **Total claim cost** | **$101.5M** | Represents total billed claim value in the sample. |
+| 🛡️ **Payer coverage** | **$31.1M / 30.6%** | Quantifies the portion of billed cost attributed to payers. |
+| ⚠️ **Uncovered claim exposure** | **$70.4M / 69.4%** | Shows claim cost not offset by recorded payer coverage. |
+| ✅ **Covered procedures** | **24,791 / 51.97%** | Compares procedures linked to positive payer coverage with uncovered procedures. |
+
+## 🔎 Key Findings
+
+- 📈 **2014 recorded the highest utilization**, with encounter and procedure volumes peaking in the same period.
+- 🏥 **Inpatient visits carry the highest average claim cost**, at approximately **$7.8K per encounter**.
+- 🛡️ **Procedure coverage is nearly evenly divided**: 24,791 procedures were classified as covered and 22,910 as not covered.
+- 💰 **Payers contributed 30.6% of total claim cost**, leaving approximately **$70.4M in uncovered claim exposure**.
+- 🔁 **Repeat utilization is widespread**: 854 of 974 patients had more than one encounter in the sample. This is a repeat-utilization measure—not a formal 30-day readmission rate.
+
+## 🧭 Report Pages
+
+| Page | Decision focus | Main visuals |
+| --- | --- | --- |
+| **01 · Executive Overview** | How much activity occurred, what it cost, and how much was covered? | KPI scorecard, encounter and procedure trends, inpatient LOS trend, cost by encounter class, procedure coverage, executive findings. |
+| **02 · Patient Insights** | Who was served, how often did they return, and where was demand concentrated? | Patient KPIs, repeat-utilization trend, encounter mix, age and gender distribution, county ranking, patient narrative. |
+| **03 · Financial & Coverage** | What financial exposure remains after payer contribution? | Claim and payer trends, coverage by payer, cost by encounter class, procedure coverage, financial findings. |
+
+## 🧱 Semantic Model
+
+The model uses encounter activity as the analytical hub, with one-to-many relationships from descriptive dimensions and a one-to-many relationship from encounters to procedures.
+
+```mermaid
+erDiagram
+    PATIENTS ||--o{ ENCOUNTERS : "has"
+    PAYERS ||--o{ ENCOUNTERS : "covers"
+    ORGANIZATIONS ||--o{ ENCOUNTERS : "provides"
+    DIM_DATE ||--o{ ENCOUNTERS : "filters"
+    ENCOUNTERS ||--o{ PROCEDURES : "includes"
+```
+
+DAX logic is organized into three intentionally disconnected measure tables:
+
+- `01 Executive KPIs`
+- `02 Patient Metrics`
+- `03 Financial Metrics`
+
+This subject-oriented structure keeps business logic separate from source columns and makes the model easier to navigate, audit, and maintain.
+
+## 🧮 Example DAX Logic
+
+The inpatient length-of-stay calculation filters to inpatient records with valid start and stop timestamps before calculating the average duration in hours.
+
+```DAX
+Average Inpatient LOS =
+AVERAGEX (
+    FILTER (
+        encounters,
+        encounters[ENCOUNTERCLASS] = "inpatient"
+            && NOT ISBLANK ( encounters[START] )
+            && NOT ISBLANK ( encounters[STOP] )
+            && encounters[STOP] >= encounters[START]
+    ),
+    DIVIDE (
+        DATEDIFF ( encounters[START], encounters[STOP], SECOND ),
+        3600
+    )
+)
+```
+
+The uncovered financial exposure is kept separate from payer contribution:
+
+```DAX
+Uncovered Claim Exposure =
+[Total Claim Cost] - [Total Payer Coverage]
+```
+
+## 🧠 Metric Governance
+
+Clear definitions are essential in healthcare reporting. I documented the following distinctions to prevent visually compelling—but analytically incorrect—conclusions:
+
+| Term | Definition used in this project |
 | --- | --- |
-| **How many patients have been admitted or readmitted over time?** | The dashboard tracks patient volume and repeat visits over time. The published overview shows **974 distinct patients**, **854 repeat patients**, and an **87.7% repeat visit rate**, with yearly trend visuals for volume and readmissions. |
-| **How long are patients staying in the hospital, on average?** | The model includes an **Average Length of Stay Hours** measure and trend logic to evaluate stay duration patterns across encounters and time periods. |
-| **How much is the average cost per visit?** | The report uses **Average Cost per Visit**, **Average Cost Card**, and **Total Claim Cost** measures to frame financial exposure at the visit level. |
-| **How many procedures are covered by insurance?** | The dashboard includes **Insured Procedures**, **Procedure Coverage Rate**, and **Coverage Status** logic to compare covered and uncovered procedures. |
-
-## 🧱 Data Model Architecture
-
-The model connects hospital activity across encounters, patients, procedures, payers, organizations, and date dimensions.
-
-**Click the image to open it full-size and zoom in.**
-
-<a href="assets/data-model-architecture.png">
-  <img src="assets/data-model-architecture.png" alt="Power BI data model architecture for the hospital financial exposure dashboard" width="100%">
-</a>
-
-## 🧮 Centralized DAX Measures Layer
-
-I created a dedicated **Measures** table to centralize KPI logic for admissions, readmissions, average cost, procedure coverage, payer coverage, and patient utilization metrics.
-
-This makes the dashboard easier to maintain, audit, and explain because the visuals rely on consistent definitions instead of scattered calculations.
-
-**Click the image to open it full-size and zoom in.**
-
-<a href="assets/measures-layer-highlight.png">
-  <img src="assets/measures-layer-highlight.png" alt="Power BI measures table highlighted in the model view" width="100%">
-</a>
+| **Encounter** | One hospital service record. It is not automatically an inpatient admission. |
+| **Distinct patient** | A unique patient identifier, counted once within the selected filter context. |
+| **Repeat-utilization patient** | A patient with more than one encounter in the sample or selected context. This should not be labeled a 30-day readmission without discharge-to-return logic. |
+| **Average inpatient LOS** | Average elapsed time between valid inpatient encounter start and stop timestamps. |
+| **Covered procedure** | A procedure linked to an encounter with positive recorded payer coverage. |
+| **Uncovered claim exposure** | Total claim cost minus recorded payer coverage. It is not proof of cash actually paid by the patient. |
 
 ## 🛠️ Build Process
 
-| Phase | What I Built |
+| Phase | Implementation |
 | --- | --- |
-| **1. Data Preparation** | Cleaned and shaped hospital records in Power Query for patient, encounter, procedure, payer, and date analysis. |
-| **2. Data Modeling** | Connected fact and dimension tables to support trend analysis, coverage analysis, and patient-level reporting. |
-| **3. KPI Development** | Built DAX measures for admissions, readmissions, cost, length of stay, coverage, encounters, and patient utilization. |
-| **4. Dashboard Design** | Designed an executive report with KPI cards, trend charts, encounter mix, demographics, geography, and narrative context. |
-| **5. Publication** | Published the dashboard and embedded it into my portfolio case study. |
+| **1 · Data preparation** | Cleaned hospital records in Power Query, standardized data types, created reporting fields, and separated date from encounter timestamps. |
+| **2 · Data modeling** | Connected patients, payers, organizations, encounters, procedures, and a dedicated date dimension using controlled relationship directions. |
+| **3 · KPI development** | Built reusable DAX measures for activity, inpatient LOS, patient utilization, claim cost, payer coverage, and procedure coverage. |
+| **4 · Report UX** | Designed a consistent three-page interface with executive cards, filter panels, navigation buttons, reset bookmarks, tooltips, and narrative insight panels. |
+| **5 · Validation** | Reconciled card totals against source-table row counts and reviewed metric definitions to distinguish encounters, admissions, repeat visits, and formal readmissions. |
+| **6 · Publication** | Published the report to Power BI Service and created a portfolio-ready GitHub case study. |
 
-## 📊 Key Dashboard Areas
+## 🎛️ Interactivity
 
-- 👥 Patient and admission overview
-- 🔁 Repeat patients and repeat visit rate
-- 📅 Patient volume and readmission trends
-- 🏷️ Encounter class mix
-- 🧑‍🤝‍🧑 Patient demographics
-- 🗺️ Patient geography
-- 💵 Visit cost and claim cost exposure
-- 🛡️ Insurance and procedure coverage
+- Filter by date, encounter class, payer, patient county, gender, age group, race, and coverage status.
+- Navigate between the three report pages using the persistent sidebar.
+- Reset each page to its intended default state with bookmark-driven reset controls.
+- View filter-aware KPIs and trends without changing the underlying business definitions.
+- See both the historical data window and the report refresh date in the header.
+
+## 📚 Dataset
+
+- **Source:** [Maven Analytics — Maven Hospital Challenge](https://mavenanalytics.io/challenges/maven-hospital-challenge)
+- **Data type:** Synthetic hospital patient data
+- **Period:** 2011–2022; the report displays January 2011 through February 2022
+- **Scale:** Approximately 1,000 patients, 75,592 records, and 55 fields across multiple tables
+- **Subject areas:** Patient demographics, encounters, procedures, organizations, payers, insurance coverage, cost, geography, and time
+
+> This is a portfolio project created from synthetic challenge data. It does not contain protected health information and should not be interpreted as an official Massachusetts General Hospital report.
+
+## ⚠️ Analytical Limitations
+
+- The dataset is a static historical sample, not a live hospital operational system.
+- The refresh date indicates when the Power BI model was refreshed; it does not extend the underlying data beyond February 2022.
+- Repeat encounters do not, by themselves, establish a clinical readmission.
+- Recorded payer coverage and uncovered claim exposure do not establish the final amount collected from either insurers or patients.
+- Results describe this sample and should not be generalized to the current MGH patient population.
 
 ## 🧠 Skills Demonstrated
 
-| Skill Area | Evidence |
+| Skill | Evidence in this project |
 | --- | --- |
-| **Power BI** | Published multi-page executive dashboard |
-| **Power Query** | Data preparation and reporting fields |
-| **DAX** | Centralized Measures table with KPI logic |
-| **Data Modeling** | Connected healthcare entities across tables |
-| **Healthcare Analytics** | Patient volume, readmission, cost, and coverage analysis |
-| **Executive Storytelling** | Dashboard organized around stakeholder questions |
-| **Governance Thinking** | Clear metric definitions and explainable reporting logic |
+| **Power BI** | Published, interactive, multi-page executive report |
+| **Power Query** | Data cleaning, type handling, timestamp preparation, and reporting fields |
+| **DAX** | Filter-aware KPIs, ratios, display measures, and validation logic |
+| **Data modeling** | Fact-and-dimension relationships, date modeling, and subject-oriented measure tables |
+| **Data validation** | Reconciliation of totals and correction of admission/readmission terminology |
+| **UX design** | Consistent visual hierarchy, navigation, slicers, bookmarks, and accessible color system |
+| **Executive storytelling** | Findings framed around utilization, cost, coverage, and financial exposure |
+| **Governance thinking** | Transparent metric definitions, limitations, and responsible interpretation |
 
-## 💡 Why This Project Matters
+## 💡 What This Project Demonstrates
 
-Healthcare dashboards should do more than display charts. They should help leaders understand performance, cost, utilization, coverage, and operational risk.
+A dashboard is credible only when its visual polish is supported by accurate definitions. This project demonstrates my ability to move from raw multi-table data to a governed semantic model and an executive-facing analytical product—while communicating both the insights and the limits of what the data can support.
 
-This project shows my ability to move from raw data to an executive-ready reporting product that is structured, explainable, and useful for decision-making.
+---
 
-## 🧾 Note
-
-This project was built from challenge/sample data for portfolio demonstration. It does **not** use confidential patient data.
+<p align="center">
+  Created by <strong>Beatrice Kungu</strong><br>
+  <a href="https://github.com/beatricekungu">GitHub Profile</a>
+</p>
